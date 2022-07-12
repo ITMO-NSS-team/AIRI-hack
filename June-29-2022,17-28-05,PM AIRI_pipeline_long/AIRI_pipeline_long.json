@@ -1,0 +1,124 @@
+{
+    "total_pipeline_operations": [
+        "scaling",
+        "pca",
+        "ransac_lin_reg",
+        "one_hot_encoding",
+        "ridge"
+    ],
+    "depth": 4,
+    "nodes": [
+        {
+            "operation_id": 3,
+            "operation_type": "scaling",
+            "operation_name": "ScalingImplementation",
+            "custom_params": "default_params",
+            "params": "default_params",
+            "nodes_from": [],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_3.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 4,
+            "operation_type": "pca",
+            "operation_name": "PCAImplementation",
+            "custom_params": {
+                "svd_solver": "full",
+                "n_components": 0.9102522901750759
+            },
+            "params": {
+                "svd_solver": "full",
+                "n_components": 0.9102522901750759
+            },
+            "nodes_from": [],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_4.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 5,
+            "operation_type": "ransac_lin_reg",
+            "operation_name": "LinearRegRANSACImplementation",
+            "custom_params": {
+                "min_samples": 0.7180546700650643,
+                "residual_threshold": 0.5620067238111308,
+                "max_trials": 432.2212021249407,
+                "max_skips": 277095.5717080234
+            },
+            "params": {
+                "min_samples": 0.7180546700650643,
+                "residual_threshold": 0.5620067238111308,
+                "max_trials": 432.2212021249407,
+                "max_skips": 277095.5717080234
+            },
+            "nodes_from": [],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_5.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 2,
+            "operation_type": "one_hot_encoding",
+            "operation_name": "OneHotEncodingImplementation",
+            "custom_params": "default_params",
+            "params": "default_params",
+            "nodes_from": [
+                3,
+                4,
+                5
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_2.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 1,
+            "operation_type": "scaling",
+            "operation_name": "ScalingImplementation",
+            "custom_params": "default_params",
+            "params": "default_params",
+            "nodes_from": [
+                2
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_1.pkl"
+            ],
+            "rating": null
+        },
+        {
+            "operation_id": 0,
+            "operation_type": "ridge",
+            "operation_name": "Ridge",
+            "custom_params": {
+                "alpha": 0.09165624831859236
+            },
+            "params": {
+                "alpha": 0.09165624831859236
+            },
+            "nodes_from": [
+                1,
+                2
+            ],
+            "fitted_operation_path": [
+                "fitted_operations",
+                "operation_0.pkl"
+            ],
+            "rating": null
+        }
+    ],
+    "preprocessing": [
+        "preprocessing",
+        "data_preprocessor.pkl"
+    ],
+    "descriptive_id": "(((/n_pca_{'svd_solver': 'full', 'n_components': 0.9102522901750759};;/n_ransac_lin_reg_{'min_samples': 0.7180546700650643, 'residual_threshold': 0.5620067238111308, 'max_trials': 432.2212021249407, 'max_skips': 277095.5717080234};;/n_scaling_default_params;)/n_one_hot_encoding_default_params;)/n_scaling_default_params;;(/n_pca_{'svd_solver': 'full', 'n_components': 0.9102522901750759};;/n_ransac_lin_reg_{'min_samples': 0.7180546700650643, 'residual_threshold': 0.5620067238111308, 'max_trials': 432.2212021249407, 'max_skips': 277095.5717080234};;/n_scaling_default_params;)/n_one_hot_encoding_default_params;)/n_ridge_{'alpha': 0.09165624831859236}"
+}
