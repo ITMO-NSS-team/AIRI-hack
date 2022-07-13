@@ -5,6 +5,6 @@ Data is available [here](https://www.kaggle.com/competitions/molhack-2022/data).
 
 [FEDOT](https://github.com/nccr-itmo/FEDOT) framework was used for regression task. MAE was used as a regression metrics.
 
-Final pipeline can be seen below. The team took the third place.
+Final pipeline can be seen below. The team took the third place with final public score 0.04266.
 <img src="./airi/final_pipeline.png" width="900"/> 
 
