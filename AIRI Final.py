@@ -64,7 +64,7 @@ def run_AIRI_case(files_path: str, is_visualise=True) -> float:
     fit_data, predict_data, val_data = data_preparation(files_path)
 
     automl_model = Fedot(problem='regression', timeout=120,
-                         preset='best_quality', n_jobs=2)
+                         preset='best_quality', n_jobs=2, safe_mode=False)
     automl_model.fit(features=fit_data,
                      target=fit_data.target)
 
